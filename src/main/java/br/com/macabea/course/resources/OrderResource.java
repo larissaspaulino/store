@@ -19,7 +19,7 @@ public class OrderResource {
     @Autowired
     private OrderService service;
 
-    @GetMapping("/all")
+    @GetMapping
     public ResponseEntity<List<Order>> findAll() {
         List<Order> list = service.findAll();
 

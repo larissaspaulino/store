@@ -1,7 +1,7 @@
 package br.com.macabea.course.resources;
 
-import br.com.macabea.course.entites.Category;
-import br.com.macabea.course.services.CategoryService;
+import br.com.macabea.course.entites.Product;
+import br.com.macabea.course.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,22 +12,22 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/categories")
-public class CategoryResource {
+@RequestMapping("/products")
+public class ProductResource {
 
     @Autowired
-    private CategoryService service;
+    private ProductService service;
 
     @GetMapping
-    public ResponseEntity<List<Category>> findAll() {
-        List<Category> list = service.findAll();
+    public ResponseEntity<List<Product>> findAll() {
+        List<Product> list = service.findAll();
 
         return ResponseEntity.ok().body(list);
     }
 
     @GetMapping(value = "/{id}")
-    public ResponseEntity<Category> findById(@PathVariable Long id) {
-        Category obj = service.findById(id);
+    public ResponseEntity<Product> findById(@PathVariable Long id) {
+        Product obj = service.findById(id);
 
         return ResponseEntity.ok().body(obj);
     }
