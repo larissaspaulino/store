@@ -15,8 +15,10 @@ import java.util.Objects;
 public class OrderItem implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
+
     @EmbeddedId
     private OrderItemPK id = new OrderItemPK();
+
     private Integer quantity;
     private Double price;
 
